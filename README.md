@@ -14,7 +14,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 #bfloat16 - Ampere+ GPU
 #float16 - 8bit or older GPU
 
-model = AutoModelForCausalLM.from_pretrained(model_id, cache_dir='./stablelm', 
+model = AutoModelForCausalLM.from_pretrained(model_id, cache_dir='./models', 
     torch_dtype=torch.float16, trust_remote_code=True, load_in_8bit=True, device_map="auto", offload_folder="offload")
 
 # Set PT model to inference mode
